@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+        <script src="/static/choosefile.js"></script>
+        <title>Service</title>
+    </head>
+    <body>
+        <div class="content">
+            <h1>Uploading file service</h1>
+            <hr style="width:315px;">
+            <form action='/uploadform/{{eventid}}' method="post" enctype="multipart/form-data">
+                <p>{{eventid}}</p>
+                <input type="file" name="file" accept=".csv, .docx, .doc, .pdf,.xls" required/>
+                <!-- <input type="file" name="file" id="actual-btn" hidden/>
+                <label for="actual-btn">Choose File</label>
+                <span id="file-chosen">No file chosen</span> -->
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <!-- <script>
+            const actualBtn = document.getElementById('actual-btn');
+            const fileChosen = document.getElementById('file-chosen');
+            console.log("nelle");
+
+
+            function validateFile(){
+                fileChosen.textContent = "temp";
+                if(fileChosen.textContent=="No file chosen"){
+                    console.log(fileChosen.textContent);
+                    actualBtn.addEventListener('change', function(){
+                    fileChosen.textContent = this.files[0].name;
+                    })
+
+                    if(fileChosen.textContent!="No file chosen"){
+                        console.log(fileChosen.textContent);
+                        return true;
+                    }
+                }
+                else {
+                    console.log("fdfd");
+                    return true;
+                }
+            }
+        </script> -->
+    </body>
+</html>

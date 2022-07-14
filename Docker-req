@@ -1,0 +1,8 @@
+FROM python:3.10-alpine
+
+WORKDIR /fileservice
+
+COPY ./require.txt /fileservice
+
+RUN apk add nano
+RUN pip3 install -r require.txt
